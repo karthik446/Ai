@@ -14,7 +14,7 @@ image = np.array([[1, 2, 3, 4, 5, 6, 7],
 filter_kernel = np.array([[-1, 1, -1], [-2, 3, 1], [2, -4, 0]])
 
 c = scipy.signal.convolve2d(image, filter_kernel, mode="same", boundary="fill", fillvalue=0)
-# print(c)
+print(c)
 
 
 def add_padding(size, row_size, col_size):
@@ -29,8 +29,6 @@ def add_padding(size, row_size, col_size):
 row, col = 7, 7
 # rotate the filter kernel twice by 90 degrees - i.e. 180 degrees
 filter_kernel_flipped = np.rot90(filter_kernel, 2)
-print(filter_kernel)
-print(filter_kernel_flipped)
 after_padding = add_padding(9, row, col)
 
 # output image
